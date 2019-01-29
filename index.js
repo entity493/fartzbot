@@ -131,6 +131,12 @@ client.on("message", async message => {
     const fetched = await message.channel.fetchMessages({limit: deleteCount});
     message.channel.bulkDelete(fetched)
       .catch(error => message.reply(`Couldn't delete messages because of: ${error}`));
+   
+    if(command === "github") {
+      message.channel.send({embed: {
+  color: red,
+  description: "Hello"
+}});
   }
 });
 
