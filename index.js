@@ -6,8 +6,6 @@ const Discord = require("discord.js");
 // this is what we're refering to. Your client.
 const client = new Discord.Client();
 
-var HelpMsg = JSON.parse(fs.readFileSync('Storage/Commands.txt', 'utf8'));
-
 // Here we load the config.json file that contains our token and our prefix values. 
 const config = require("./config.json");
 // config.token contains the bot's token
@@ -138,8 +136,8 @@ client.on("message", async message => {
   }
   
     if(command === "help") {
-    message.channel.send(HelpMsg);
-  }
+      message.channel.send('Here is a list of commands:\n?kick - Kicks a specified user\n?ban Bans a specified user\n?purge - Deletes a specified amount of messages, Works great for deleting spam\n?say - Say a specified message for RolePlaying purposes\n?help - Displays this message')
+    }
 });
 
 client.login(process.env.token);
