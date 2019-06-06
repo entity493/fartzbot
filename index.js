@@ -6,6 +6,8 @@ const Discord = require("discord.js");
 // this is what we're refering to. Your client.
 const client = new Discord.Client();
 
+var HelpMsg = JSON.parse(fs.readFileSync('Storage/Commands.txt', 'utf8'));
+
 // Here we load the config.json file that contains our token and our prefix values. 
 const config = require("./config.json");
 // config.token contains the bot's token
@@ -133,6 +135,10 @@ client.on("message", async message => {
     const fetched = await message.channel.fetchMessages({limit: deleteCount});
     message.channel.bulkDelete(fetched)
       .catch(error => message.reply(`Couldn't delete messages because of: ${error}`));
+  }
+  
+    if(command === "help") {
+    message.channel.send(HelpMsg);
   }
 });
 
