@@ -1,0 +1,6 @@
+Here is a list of commands:
+?kick - Kicks a specified user
+?ban - Bans a specified user
+?purge - Deletes a specified amount of messages, Works great for deleting spam
+?say - Say a specified message for RolePlaying purposes
+?help - Displays this message
