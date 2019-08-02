@@ -136,10 +136,13 @@ client.on("message", async message => {
   }
   
     if(command === "help") {
-      message.channel.send('Here is a list of commands:```?kick - Kicks a specified user\n?ban Bans a specified user\n?purge - Deletes a specified amount of messages, Works great for deleting spam\n?say - Say a specified message for RolePlaying purposes\n?donate - Shows a donation link to donate to the creator of this awesome bot\n?help - Displays this message```')
+      message.channel.send('Here is a list of commands:```?kick - Kicks a specified user\n?ban Bans a specified user\n?purge - Deletes a specified amount of messages, Works great for deleting spam\n?say - Say a specified message for RolePlaying purposes\n?donate - Shows a donation link to donate to the creator of this awesome bot\n?vote - Allows you to support this bot for free by voting for it\n?help - Displays this message```')
     }
     if(command === "donate") {
       message.channel.send('You may donate at https://paypal.me/scottcow')
+    }
+    if(command === "vote") {
+      message.channel.send('You may vote at https://discordbots.org/bot/539489813804482571/vote')
     }
 });
 client.login(process.env.token);
